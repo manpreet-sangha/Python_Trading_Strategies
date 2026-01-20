@@ -1,5 +1,6 @@
 """Data loading utilities."""
 import pandas as pd
+import numpy as np
 
 
 def load_csv_data(filepath: str, date_column: str = 'Date', 
@@ -30,23 +31,23 @@ def load_csv_data(filepath: str, date_column: str = 'Date',
 
 def generate_sample_data(start_date: str = '2020-01-01', 
                         end_date: str = '2023-12-31',
-                        initial_price: float = 100.0) -> pd.DataFrame:
+                        initial_price: float = 100.0,
+                        random_seed: int = 42) -> pd.DataFrame:
     """Generate sample OHLCV data for testing.
     
     Args:
         start_date: Start date for the data (default: '2020-01-01')
         end_date: End date for the data (default: '2023-12-31')
         initial_price: Initial price (default: 100.0)
+        random_seed: Random seed for reproducibility (default: 42)
     
     Returns:
         DataFrame with sample OHLCV data
     """
-    import numpy as np
-    
     dates = pd.date_range(start=start_date, end=end_date, freq='D')
     
     # Generate random price movements
-    np.random.seed(42)
+    np.random.seed(random_seed)
     returns = np.random.normal(0.001, 0.02, len(dates))
     prices = initial_price * (1 + returns).cumprod()
     

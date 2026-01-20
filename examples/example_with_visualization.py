@@ -1,7 +1,8 @@
-"""Example: Visualizing strategy results."""
-import sys
-sys.path.append('..')
+"""Example: Visualizing strategy results.
 
+Note: If imports fail, install the package in development mode:
+    pip install -e .
+"""
 from strategies.macd_strategy import MACDStrategy
 from backtesting.backtest import Backtest
 from utils.data_loader import generate_sample_data

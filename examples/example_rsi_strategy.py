@@ -1,7 +1,8 @@
-"""Example: Running an RSI strategy with backtesting."""
-import sys
-sys.path.append('..')
+"""Example: Running an RSI strategy with backtesting.
 
+Note: If imports fail, install the package in development mode:
+    pip install -e .
+"""
 from strategies.rsi_strategy import RSIStrategy
 from backtesting.backtest import Backtest
 from utils.data_loader import generate_sample_data

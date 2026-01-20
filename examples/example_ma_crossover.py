@@ -1,7 +1,8 @@
-"""Example: Running a Moving Average Crossover strategy with backtesting."""
-import sys
-sys.path.append('..')
+"""Example: Running a Moving Average Crossover strategy with backtesting.
 
+Note: If imports fail, install the package in development mode:
+    pip install -e .
+"""
 from strategies.ma_crossover import MovingAverageCrossover
 from backtesting.backtest import Backtest
 from utils.data_loader import generate_sample_data

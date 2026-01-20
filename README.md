@@ -43,7 +43,12 @@ git clone https://github.com/manpreet-sangha/Python_Trading_Strategies.git
 cd Python_Trading_Strategies
 ```
 
-2. Install required dependencies:
+2. Install the package in development mode (recommended):
+```bash
+pip install -e .
+```
+
+Or install required dependencies directly:
 ```bash
 pip install -r requirements.txt
 ```
